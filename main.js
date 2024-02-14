@@ -10,6 +10,17 @@
 // 2. true이면 끝난걸로 간주하고 밑줄
 // 3. false 이면 안 끝난걸로 간주하고 그대로
 
+let horizontalUnderLine=document.getElementById("under-line");
+let horizontalMenus=document.querySelectorAll(".menu")
+console.log(horizontalMenus)
+
+horizontalMenus.forEach((menu)=>menu.addEventListener("click",(e)=>horizontalIndicator(e)));
+
+function horizontalIndicator(e){
+  horizontalUnderLine.style.left=e.currentTarget.offsetLeft+"px";
+  horizontalUnderLine.style.width=e.currentTarget.offsetWidth+"px";
+  horizontalUnderLine.style.top=e.currentTarget.offsetTop+e.currentTarget.offsetHeight+"px";
+}
 
 let taskInput = document.getElementById("task-input");
 console.log(taskInput)
